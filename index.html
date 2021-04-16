@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Password Generator</title>
+</head>
+<body>
+  <article class="generator">
+    <h1 class="generator__title">Gerador de Senha</h1>
+    <div class="generator__display">
+      <span class="generator__password">
+        <button>Teste</button>
+      </span>
+    </div>
+    <div class="generator__option">
+      <label >Número de caracteres:</label>
+      <input class="generator__option--value" type="number" min='4' max='20' value='10'>
+    </div>
+    <div class="generator__option">
+      <label >Inserir letras maiúsculas:</label>
+      <input class="generator__option--upper" type="checkbox">
+    </div>
+    <div class="generator__option">
+      <label >Inserir letras minúsculas:</label>
+      <input class="generator__option--lower" type="checkbox">
+    </div>
+    <div class="generator__option">
+      <label >Inserir números:</label>
+      <input class="generator__option--number" type="checkbox">
+    </div>
+    
+    <div class="generator__submit">
+      <button class="generator__submit--btn">gerar password</button>
+    </div>
+
+  </article>
+  
+  <script src="./generator.js"></script>
+</body>
+</html>
