@@ -5,12 +5,23 @@ let btnGenerator = document.querySelector(".generator__submit--btn");
 let password = [];
 let itemsPassword = [];
 
-btnCopyCode.addEventListener("click", copyCode);
-btnGenerator.addEventListener("click", passwordGenerator);
+btnCopyCode.addEventListener("click", () => {
+  let passwordContent = displayCode.innerText;
+  let newTextArea = document.createElement("textarea");
+  newTextArea.value = passwordContent;
 
-function copyCode() {
-  console.log(displayCode.innerText);
-}
+  displayCode.appendChild(newTextArea);
+  newTextArea.select();
+  try {
+    document.execCommand("copy");
+    newTextArea.remove();
+    alert("Senha copiada para área de transferência");
+  } catch (err) {
+    console.log("Ocorreu um erro ao tentar copiar", err);
+  }
+});
+
+btnGenerator.addEventListener("click", passwordGenerator);
 
 function passwordGenerator() {
   itemsPassword = [];
