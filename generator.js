@@ -41,5 +41,36 @@ function passwordGenerator() {
       "A senha precisa ter no mínimo:\n- 4 caractéres\n- 1 condição selecionada"
     );
   }
-  return (displayCode.innerText = itemsPassword.join(""));
+  randomPassword(itemsPassword, numberCharacter);
+}
+
+function randomPassword(arrPassword, lengthPassword) {
+  finalPassword = [];
+
+  for (let i = 0; i < lengthPassword; i++) {
+    if (arrPassword.indexOf("Upper") !== -1) {
+      password.push(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
+    }
+    if (arrPassword.indexOf("Lower") !== -1) {
+      password.push(String.fromCharCode(Math.floor(Math.random() * 26) + 97));
+    }
+    if (arrPassword.indexOf("Number") !== -1) {
+      password.push(Math.floor(Math.random() * 10));
+    }
+  }
+  for (let j = 0; j < lengthPassword; j++) {
+    finalPassword.push(password[j]);
+  }
+  sortPassword(finalPassword);
+}
+
+function sortPassword(finalPassword) {
+  for (let i = 0; i < 5; i++) {
+    removeIndex = Math.floor(Math.random() * finalPassword.length);
+    addIndex = Math.floor(Math.random() * finalPassword.length);
+
+    let numberOff = finalPassword.splice(removeIndex, 1);
+    finalPassword.splice(addIndex, 0, numberOff);
+  }
+  return (displayCode.innerText = finalPassword.join(""));
 }
