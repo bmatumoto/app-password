@@ -1,0 +1,23 @@
+{
+  "name": "app-password",
+  "version": "1.0.0",
+  "description": "app generate password",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "./node_modules/.bin/gh-pages -d dist/ -d dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmatumoto/app-password.git"
+  },
+  "author": "Bruno M",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bmatumoto/app-password/issues"
+  },
+  "homepage": "https://github.com/bmatumoto/app-password#readme",
+  "devDependencies": {
+    "gh-pages": "^3.2.0"
+  }
+}
